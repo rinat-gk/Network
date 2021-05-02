@@ -1,0 +1,101 @@
+>>>>>>HSRP Hot Standby Routing Protocol>>>>>>>>>>>
+
+
+
+
+>>>Hot standby Routing protocol
+
+>>> Cisco Proprietary
+
+>>> Uses UDP port 1985 and multicast address 224.0.0.2
+
+>>> HSRP has two roles: Active and Standby
+    + HSRP router with highest priority is considered "Active"
+	+ Default priority = 100
+
+>>> MAC address: 0000.0c07..acxx
+    + xx refers to the group number in hexadecimal
+
+
+>>> Preemption disabled by defaul
+
+>>> HSRP/VRRP = No load-sharing feature
+
+>>> MHSRP can be used for load sharing
+
+>>> Enabling HSRP in the interface
+    + switch(config-if)# standby <group-id> ip <virtual-ip>
+
+
+>>> Groups is identification for broadcast domain
+    + Ex. switch01(config-if)# standby 1 ip 172.16.1.1
+	      switch01(config-if)# standby 1 ip 172.16.1.1
+		  
+		  switch02(config-if)# standby 1 ip 172.16.2.1
+		  switch02(config-if)# standby 1 ip 172.16.2.1
+		  
+>>> Configuring priority
+    + switch(config-if)# standby <group-id> priority <priority>
+	
+>>> Enabling preemption
+    + switch(config-if)# standby <group-id> preempt
+	
+>>> HSRP State Machine
+    +Disabled
+	+Initial (INIT)
+	+Learn
+	+Listen (The routers, know about virtual ip, but nobody is active and standby)
+	+Speak
+	+Standby / Active
+
+
+>>> HSRP Hello Timers
+    +HSRP Hello timer = 3 secs
+	+Dead timer = 10 secs (or 3x Hello)
+	
+>>> Modifying Preemption Behavior
+    +HSRP Preemption can be delayed to allow time for other protocols to re-build their tables
+	switch(config-if)#standby 1 preempt delay ?
+	    minimum
+		reload
+		sync
+		
+>>> HSRP Authentication (interface keys)
+    +Authentication supported
+	  +Plain Text
+	  +MD5
+    +Plain text configuration
+	  +sw1(config-if)#standby <group-id> authentication <password>
+	+MD5 configuration
+	  +sw1(config-if)#standby <group-id> authentication md5 key-string [0|7] string
+	  
+>>> HSRP Authenticaton (key chain keys)
+    + HSRP can obtain current/active MD5 key from a key chain.
+	+ NTP should also be configured.
+	  key chain MyChain
+	    key 1
+		  key-string cisco
+		  accept-lifetime 08:00:00 Aug 1 2014 11:59:59 Sep 1 2014
+		  send-lifetime 08:00:00 Aug 1 2014 11:59:59 Sep 1 2014
+		key 2
+		  key-string cisco-123
+		  accept-lifetime 08:00:00 Sep 2 2014 11:59:59 Oct 1 2014
+		  send-lifetime 08:00:00 Sep 2 2014 11:59:59 Oct 1 2014
+      !
+	  interface Vlan 100
+	    ip address 1.1.1.100 255.255.255.0
+		standby 1 ip 1.1.1.1
+		standby 1 authentication md5 key-chain MyChain
+		
+>>> HSRP Object Tracking
+    +HSRP can track objects (typically interfaces)
+	+If tracked object fails, HSRP priorit is reduced by confugurable ammount (default=10)
+	+ First, create a "track object" globally
+	  Router-1(config)#track 1 ?
+	    application
+		interface
+		ip
+		ipv6
+		list
+		stub-object
+    + (config-if)# standby <group> track <object#> [decrement value]
