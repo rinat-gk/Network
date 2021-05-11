@@ -1,0 +1,104 @@
+==============Configuring a service Provider Network BGP Part 1===============
+
+
+>>>Configuration on R1>>>>
+
+router ospf 1
+network 10.1.1.1 0.0.0.0 area 0
+network 10.1.1.5 0.0.0.0 area 0
+
+! On interfaces 
+ip ospf hello-interval 1
+ip ospf dead-interval 3
+ 
+>>>Configuration on R2>>>>
+
+router ospf 1
+network 10.1.1.6 0.0.0.0 area 0
+network 10.1.1.9 0.0.0.0 area 0
+
+! On interfaces 
+ip ospf hello-interval 1
+ip ospf dead-interval 3
+
+>>>Configuring on R3>>>>
+
+router ospf 1
+network 10.1.1.2 0.0.0.0 area 0
+network 10.1.1.13 0.0.0.0 area 0
+
+! On interfaces 
+ip ospf hello-interval 1
+ip ospf dead-interval 3
+
+>>>Configuring on R4>>>>
+
+router ospf 1
+network 10.1.1.10 0.0.0.0 area 0
+network 10.1.1.14 0.0.0.0 area 0
+
+! On interfaces 
+ip ospf hello-interval 1
+ip ospf dead-interval 3
+
+
+>>>>Objective 2:
+>>>>Configure full-mesh iBGP peers between all routers within ISP>>>>
+
+!R1
+int loopback 0
+ip address 1.1.1.1 255.255.255.255
+
+!R2
+int loopback 0
+ip address 2.2.2.2 255.255.255.255
+
+!R3
+int loopback 0
+ip address 3.3.3.3 255.255.255.255
+
+!R4
+int loopback 0
+ip address 4.4.4.4 255.255.255.255
+
+We configured loopback interfaces on each router, but nobody knows about this networks.
+So, we add this loopback ip addresses to each ospf process routing.
+
+!R1
+router ospf 1
+network 1.1.1.1 0.0.0.0 area 0
+
+!R2
+router ospf 1
+network 2.2.2.2 0.0.0.0 area 0
+
+!R3
+router ospf 1
+network 3.3.3.3 0.0.0.0 area 0
+
+!R4
+router ospf 1
+network 4.4.4.4 0.0.0.0 area 0
+
+
+
+
+
+
+!R1
+router bgp 500
+no synchronization
+neighbor 2.2.2.2 remote-as 500
+neighbor 2.2.2.2 update-source loopback 0
+neighbor 2.2.2.2 description CONNECTION TO R2
+neighbor 3.3.3.3 remote-as 500
+neighbor 3.3.3.3 update-source loopback 0
+neighbor 3.3.3.3 description CONNECTION TO R3
+neighbor 4.4.4.4 remote-as 500
+neighbor 4.4.4.4 update-source loopback 0
+neighbor 4.4.4.4 description CONNECTION TO R4
+
+
+!!!BGP synchronization is an old rule from the days where we didn’t run IBGP on all routers within a transit AS.
+In short, BGP will not advertise something that it learns from an IBGP neighbor to an EBGP neighbor 
+if the prefix can’t be validated in its IGP.
