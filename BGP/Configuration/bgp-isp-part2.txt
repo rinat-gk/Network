@@ -22,6 +22,17 @@ R1#router bgp 500
 R1#neighbor 1.1.1.1 remote-as 200
 R1#neighbor 1.1.1.1 update-source loopback 0
 
+Now:
+
+ISP1# sh ip bgp summary ---> neighbor in Idle State (Why?)
+ISP1# sh bgp neighbors ---> reason ----> "External eBGP neighbor is not directly connected"
+
+OK ) ---> resolution
+
+ISP1#router bgp 500
+ISP1#neighbor 11.11.11.11 ebgp-multihop 2
+
+
 
 
 
