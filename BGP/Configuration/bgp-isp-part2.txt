@@ -1,0 +1,11 @@
+<<<<<<<<ISP1 RTR Configuration>>>>>>>>>>
+
+
+ISP1# ip route 11.11.11.11 255.255.255.255 17.9.1.2
+ISP1# ip route 11.11.11.11 255.255.255.255 17.9.1.6
+
+After that we can ping RTR1 loopback interface 11.11.11.11
+
+R1#ip route 1.1.1.1 255.255.255.255 17.9.1.1
+R1#ip route 1.1.1.1 255.255.255.255 17.9.1.5
+
