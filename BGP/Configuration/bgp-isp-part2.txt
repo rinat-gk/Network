@@ -37,6 +37,8 @@ Do the same for R1:
 R1#router bgp 500
 R1#neighbor 1.1.1.1 ebgp-multihop 2
 
+See from 23:12
+
 
 
 
