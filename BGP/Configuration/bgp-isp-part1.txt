@@ -47,7 +47,7 @@ ip ospf dead-interval 3
 
 !R1
 int loopback 0
-ip address 1.1.1.1 255.255.255.255
+ip address 11.11.11.11 255.255.255.255
 
 !R2
 int loopback 0
@@ -66,7 +66,7 @@ So, we add this loopback ip addresses to each ospf process routing.
 
 !R1
 router ospf 1
-network 1.1.1.1 0.0.0.0 area 0
+network 11.11.11.11 0.0.0.0 area 0
 
 !R2
 router ospf 1
