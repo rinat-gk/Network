@@ -62,10 +62,17 @@ neighbor 2.2.2.1 description Uplink ISP2
 neighbor 2.2.2.1 ebgp-multihop 2
 neighbor 2.2.2.1 update-source Loopback0
 
+>>> We add Customer as an a Private Autonomous System (Private AS) 64512
+
+CUST1#
+router bgp 64512
+neighbor 150.1.0.1 remote-as 500
+neighbor 150.1.0.1 description NL
 
 
-
-
-
+R3#
+router bgp 500
+neighbor 150.1.0.2 remote-as 64512
+neighbor 150.1.0.2 description CUST1
 
 
