@@ -37,7 +37,30 @@ Do the same for R1:
 R1#router bgp 500
 R1#neighbor 1.1.1.1 ebgp-multihop 2
 
-R1# dosh ip bgp
+R1# do sh ip bgp
+
+
+ISP2# 
+
+ip route 22.22.22.22 255.255.255.255 180.1.5.2
+ip route 22.22.22.22 255.255.255.255 180.1.5.6
+
+router bgp 300
+neighbor 22.22.22.22 remote-as 500
+neighbor 22.22.22.22 description NL ISP - R2
+neighbor 22.22.22.22 ebgp-multihop 2
+neighbor 22.22.22.22 update-source Loopback1
+
+R2#
+
+ip route 255.255.255.255 180.1.5.1
+ip route 255.255.255.255 180.1.5.5
+
+router bgp 500
+neighbor 2.2.2.1 remote-as 300
+neighbor 2.2.2.1 description Uplink ISP2
+neighbor 2.2.2.1 ebgp-multihop 2
+neighbor 2.2.2.1 update-source Loopback0
 
 
 
