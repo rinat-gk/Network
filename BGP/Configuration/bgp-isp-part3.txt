@@ -1,0 +1,8 @@
+ISP1#
+
+Case: >>>> permit announces only loopbacks
+sh ip int br
+
+ip access-lists standard LOOPBACKS
+permit 1.1.0.0 0.0.255.255
+
