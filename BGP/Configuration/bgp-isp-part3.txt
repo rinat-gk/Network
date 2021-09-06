@@ -3,6 +3,36 @@ ISP1#
 Case: >>>> permit announces only loopbacks
 sh ip int br
 
+1)  
 ip access-lists standard LOOPBACKS
 permit 1.1.0.0 0.0.255.255
 
+2)
+route-map FILTER_LOOPBACKS
+match ip address LOOPBACKS
+
+3)
+router bgp 200
+redistribute connected route-map FILTER_LOOPBACKS
+
+4)
+sh ip bgp
+
+ISP2#
+
+sh ip int br
+
+1)  
+ip access-lists standard LOOPBACKS
+permit 2.2.0.0 0.0.255.255
+
+2)
+route-map FILTER_LOOPBACKS
+match ip address LOOPBACKS
+
+3)
+router bgp 300
+redistribute connected route-map FILTER_LOOPBACKS
+
+4)
+sh ip bgp
