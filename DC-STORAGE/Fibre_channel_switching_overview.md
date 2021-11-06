@@ -9,3 +9,14 @@
    * http://www.t11.org/
    * E.g. not IEEE or IETF
    * FCoE is T11's FC-BB-5 standard
+   * Fibre Channel Protocol (FCP) is analogous to TCP
+
+## Fibre Channel Topologies
+
+* Support three types of topologies
+* Point-to-Point (FC-P2P)
+  * Initiator (server) and Target (storage) directly connected
+* Arbitrated Loop (FC-AL)
+  * Logical ring topology, similar to Token Ring
+  * Implies contention is required on the ring
+* Switched Fabric (FC-SW)
