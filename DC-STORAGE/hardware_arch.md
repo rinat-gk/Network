@@ -28,3 +28,5 @@
   * FCoE Converged Network Adapter (CNA)
     * E.g. "Unified Fabric"
     * 10Gbps LAN plus FCoE hardware offload
+#### Nexus
+* Storage must live in its own VDC
