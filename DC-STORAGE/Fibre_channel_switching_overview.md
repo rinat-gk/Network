@@ -20,3 +20,13 @@
   * Logical ring topology, similar to Token Ring
   * Implies contention is required on the ring
 * Switched Fabric (FC-SW)
+  * Logical equivalent to a switched Ethernet LAN
+  * Switches manage the fabric allowing any-to-any communication without contention
+    * Similar to how CSMA-CD is removed with Ethernet Switching
+
+## Fibre Channel Port Types
+
+* FC has different port types to define a port's function
+* N_port - Node Port
+  * End host (target or initiator) in P2P or Switched Fabric
+  * 10.56
