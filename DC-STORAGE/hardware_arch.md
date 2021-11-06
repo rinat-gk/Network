@@ -12,3 +12,4 @@
    * Directors are Just Bigger switches
      * Think Catalyst 6509 vs Catalyst 2960
    * Higher port density
+   * Higher redundancy (power, supervisors, line cards)
