@@ -29,4 +29,13 @@
 * FC has different port types to define a port's function
 * N_port - Node Port
   * End host (target or initiator) in P2P or Switched Fabric
-  * 10.56
+* NL_port - Node Loop Port
+  * End host in an Arbitrated Loop
+* F_port - Fabric Port
+  * Switch's port that connects to a Node Port
+* FL_Port - Fabric Loop port
+  * Switch's port that connects to a Node Loop Port
+* E_Port - Expansion Port
+  * Inter Switch Link (ISL)
+* TE_port - Trunking Expansion Port
+  * Extendedn ISL, analogous to an 802.1q trunk
