@@ -62,3 +62,18 @@
   * E.g. a switches, HBAs, and arrays havemore than one port
 * WWN is not used for data plane switching
 
+## FC Identifiers
+
+* FCID is FC's 3 byte logical address
+* FCID id subdevided into three fields
+  * Domain ID
+     * Each switch gets a Domain ID
+  * Area ID
+     * Group of ports on a switch have an Area ID
+  * Port ID
+     * End station connected to switch gets a Port ID
+* FCID is used for the actual data plane traffic switching
+
+## Fibre Channel Domain IDs
+
+* Domain IDs identify a switch in the fabric
