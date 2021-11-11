@@ -39,3 +39,14 @@
   * Inter Switch Link (ISL)
 * TE_port - Trunking Expansion Port
   * Extendedn ISL, analogous to an 802.1q trunk
+
+
+## Fibre Channel Addressing
+
+* FC addressing is analogous to IP over Ethernet
+  * IP addresses are logical and manually assigned
+  * Ethernet MAC addresses are Physical and burned in
+* FC World Wide Names (WWNs)
+  * 8 byte address burned in by manufacturer
+* FC Identifier (FCID)
+  * 3 byte logical address assigned by fabric
