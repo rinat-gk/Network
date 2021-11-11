@@ -50,3 +50,15 @@
   * 8 byte address burned in by manufacturer
 * FC Identifier (FCID)
   * 3 byte logical address assigned by fabric
+
+## FC World wide Names
+
+* WWNs is FC's 8 byte physical address
+* WWN is subdivided futher into ...
+* World wide Node Name (WWNN or nWWN)
+  * Switch, server or disk's physical address
+* World wide Port Name (WWPN or pWWN)
+  * Switch, server, or disk's port's physical address
+  * E.g. a switches, HBAs, and arrays havemore than one port
+* WWN is not used for data plane switching
+
