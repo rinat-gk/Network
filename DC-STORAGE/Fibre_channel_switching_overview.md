@@ -86,3 +86,4 @@
 * FC does not use flooding to build topology like Ethernet does
 * Fabric Shortest Path first (**FSPF**) is used to route traffic between switches
   * Same Dijkstra SPF as OSPF and IS-IS
+  * 27.40
