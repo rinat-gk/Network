@@ -86,4 +86,8 @@
 * FC does not use flooding to build topology like Ethernet does
 * Fabric Shortest Path first (**FSPF**) is used to route traffic between switches
   * Same Dijkstra SPF as OSPF and IS-IS
-  * 27.40
+  * Node ID in the SPT is the FCID's Domain ID
+  * Traffic is routed via lowest cost path between domain IDs
+  * ECMP is supported for equal SPT branches
+  * Unequal cost load distribution is not supported
+* FSPF runs automatically as a Fabric Service
