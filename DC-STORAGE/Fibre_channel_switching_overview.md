@@ -123,3 +123,15 @@
 * Fibre Channel Name Server (FCNS) is analogous to ARP Cache
 * Used to resolve the WWN (Physical address) to the FCID (Logical address)
 * Like Principle switch and FSPF, FCNS is a distributed fabric service that requires no configuration
+
+## Zoning
+
+* By default all initiators learn about all targets during the login process
+  * FCNS maintains the mappings of everyone's WWPN to FCID
+* Servers mounting the wrong volumes can corrupt data
+  * E.g. Windows NTFS & MBR not compatible with Linux GPT
+* Zoning prevents this by limiting which resources an initiator can use
+  * Zoning is analogous to ACLs in Ethernet & IP world
+  * Associates WWN's, FCID's, aliases, etc. to control who can talk to who
+* Like FCNS, Zoning is a distributed fabric service
+
