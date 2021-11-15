@@ -91,3 +91,35 @@
   * ECMP is supported for equal SPT branches
   * Unequal cost load distribution is not supported
 * FSPF runs automatically as a Fabric Service
+  * No configuration required
+  * Can customize knobs, but typically not required
+  * 
+## Fibre Channel Logins
+
+* Ethenet networks are connectionless
+  * Traffic in the data plane results in topology learning in the control plane
+* Fibe Channel networks are connection oriented
+  * All end sattions must first register with the control plane of the fabric before sending any traffic
+* Fabric registration has three parts
+  * Fabric Login (FLOGI)
+  * Port Login (PLOGI)
+  * Process Login (PLRI)
+
+## FLOGI, PLOGI & PLRI
+
+* Fabric Login (FLOGI)
+  * Node Port (N_Port) tells switch's Fabric Port (F_Port) it wants to register
+  * Switch learns the WWNN and WWPN of Node
+  * Switch assigns FCID to Node
+* Port Login (PLOGI)
+  * End-to-End login between Node Ports
+  * Initiator tells Target it wants to talk
+  * Used for applications such as end-to-end flow control
+* Process Login (PLRI)
+  * Upper layer protocol login negotiation between Node Ports 
+
+## Fibre Channel Name Server
+
+* Fibre Channel Name Server (FCNS) is analogous to ARP Cache
+* Used to resolve the WWN (Physical address) to the FCID (Logical address)
+* Like Principle switch and FSPF, FCNS is a distributed fabric service that requires no configuration
