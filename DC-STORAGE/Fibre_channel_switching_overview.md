@@ -135,3 +135,21 @@
   * Associates WWN's, FCID's, aliases, etc. to control who can talk to who
 * Like FCNS, Zoning is a distributed fabric service
 
+## Virtual SANs (VSANs)
+
+* Traditionally multiple SANs were designed as physical separate networks
+  * i.e. "SAN Islands"
+  * Physical separation is costly in terms of equipment, power, space, cooling, management, etc.
+* VSANs solve the isolation problem similar to how VLANs segment broadcast domains
+  * Isolates the management and failure domain of the network
+  * Separates FLOGI, FCNS, Zoning, Aliases, etc. per VSAN
+* With VSANs, E Ports now become TE Ports
+  * Similar to 802.1Q trunks in Ethernet
+
+
+## SAN Port Channeling
+
+* Like Ethernet Port-Channeling, SAN PCs can be used to aggregate the bandwidth of physical links
+* Supports Port Channeling Protocol (PCP) for negotiation of links
+  * Similar to 802.3ad LACP in Ethernet
+  
