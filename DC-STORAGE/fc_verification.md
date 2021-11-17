@@ -9,3 +9,9 @@
 
 * show fcns database
 * show fcns database vsan 10
+
+* show run zone
+* zone name SERVER2 vsan 10
+  * member pwwn 21:00:00:1b:32:07:32:23
+  * member pwwn 21:00:00:04:cf:f3:73:5f
+  * member pwwn 21:00:00:04:cf:84:b7:9b
