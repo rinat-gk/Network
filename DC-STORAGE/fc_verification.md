@@ -18,3 +18,6 @@
 * zoneset name VSAN10 vsan 10
   * member SERVER2
 * zone commit vsan 10
+
+
+* show zone active --> show active connections (targets and initiator) 
