@@ -8,3 +8,4 @@
 
 
 * show fcns database
+* show fcns database vsan 10
