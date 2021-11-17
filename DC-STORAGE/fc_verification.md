@@ -21,3 +21,4 @@
 
 
 * show zone active --> show active connections (targets and initiator) 
+* show zoneset active
