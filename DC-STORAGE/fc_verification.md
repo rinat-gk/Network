@@ -35,4 +35,5 @@
 ![fc-domain](https://user-images.githubusercontent.com/53332783/143303069-2aed0bbe-aa86-4352-bbd8-03e558b7fc36.PNG)
 ![trunk-vsan](https://user-images.githubusercontent.com/53332783/143303808-e9cf750f-f97b-4b8a-86a1-a8667e58a2a8.PNG)
 ![sh-vsan-membersip](https://user-images.githubusercontent.com/53332783/143304129-8f781d5a-f3bb-412a-bd94-fef8b9cf0bd7.PNG)
+![device-alias-database](https://user-images.githubusercontent.com/53332783/143305037-8288f129-4814-4b41-b1c1-7f4722d9f88d.PNG)
 
