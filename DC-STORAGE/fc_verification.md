@@ -23,4 +23,5 @@
 * show zone active --> show active connections (targets and initiator) 
 * show zoneset active
 * show cfs application
-* 
+![cfs](https://user-images.githubusercontent.com/53332783/143297642-c1944efe-8128-4aba-b3ae-81cf6e5528be.PNG)
+
