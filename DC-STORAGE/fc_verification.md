@@ -9,6 +9,7 @@
 ![flogi](https://user-images.githubusercontent.com/53332783/143298187-8caf9500-cb75-4e56-809e-ec5ad307a518.PNG)
 
 * show fcns database
+![fsnc](https://user-images.githubusercontent.com/53332783/143298567-3dea1d8e-ab9b-4057-bfa1-0fe0ad029635.PNG)
 * show fcns database vsan 10
 
 * show run zone
