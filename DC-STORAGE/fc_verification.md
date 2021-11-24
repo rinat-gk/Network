@@ -32,5 +32,5 @@
 ![vsan-db](https://user-images.githubusercontent.com/53332783/143301430-a21decf8-66cd-4900-8972-0553cda740db.PNG)
 ![fc-port-create-and-reload](https://user-images.githubusercontent.com/53332783/143302006-0be1cc4d-310d-4f98-807d-5ebe4787ea7f.PNG)
 * show fcdomain domain-list
-
+![fc-domain](https://user-images.githubusercontent.com/53332783/143303069-2aed0bbe-aa86-4352-bbd8-03e558b7fc36.PNG)
 
