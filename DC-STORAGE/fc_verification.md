@@ -20,6 +20,7 @@
 * zoneset name VSAN10 vsan 10
   * member SERVER2
 * zone commit vsan 10
+![Zoneset](https://user-images.githubusercontent.com/53332783/143299175-2ba07a06-338e-478a-b81e-c243d8a270b3.PNG)
 
 
 * show zone active --> show active connections (targets and initiator) 
