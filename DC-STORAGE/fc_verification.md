@@ -6,7 +6,7 @@
   * switchport trunk allowed vsan add 10
   * switchport speed 4000
 * show flogi database
-
+![flogi](https://user-images.githubusercontent.com/53332783/143298187-8caf9500-cb75-4e56-809e-ec5ad307a518.PNG)
 
 * show fcns database
 * show fcns database vsan 10
